@@ -25,17 +25,17 @@ console.log(pc.bold(pc.cyan("ergonomics.csv")));
 console.log();
 
 console.log(pc.bold("Count"));
-console.log(`  ${pc.blue("Male:")} ${male_count} people`);
+console.log(`  ${pc.blue("Male:")}   ${male_count} people`);
 console.log(`  ${pc.magenta("Female:")} ${female_count} people`);
-console.log(`  ${pc.gray("Total:")} ${male_count + female_count} people`);
+console.log(`  ${pc.gray("Total:")}  ${male_count + female_count} people`);
 console.log();
 
 console.log(pc.bold("Mean age"));
 console.log(
-  `  ${pc.blue("Male:")} ${(male_age_total / male_count).toFixed(1)} years`,
+  `  ${pc.blue("Male:")}    ${(male_age_total / male_count).toFixed(1)} years`,
 );
 console.log(
-  `  ${pc.magenta("Female:")} ${(female_age_total / female_count).toFixed(1)} years`,
+  `  ${pc.magenta("Female:")}  ${(female_age_total / female_count).toFixed(1)} years`,
 );
 console.log(
   `  ${pc.yellow("Overall:")} ${((male_age_total + female_age_total) / (male_count + female_count)).toFixed(1)} years`,
