@@ -8,6 +8,10 @@ let female_count = 0;
 let male_age_total = 0;
 let female_age_total = 0;
 
+let left_count = 0;
+let either_count = 0;
+let right_count = 0;
+
 for (let i = 0; i < set.length; i++) {
   if (set[i].gender === "Male") {
     male_count++;
@@ -17,6 +21,16 @@ for (let i = 0; i < set.length; i++) {
   if (set[i].gender === "Female") {
     female_count++;
     female_age_total += set[i].age;
+  }
+
+  if (set[i].writingpreference.startsWith("Left")) {
+    left_count++;
+  }
+  if (set[i].writingpreference.startsWith("Either")) {
+    either_count++;
+  }
+  if (set[i].writingpreference.startsWith("Right")) {
+    right_count++;
   }
 }
 
@@ -36,23 +50,35 @@ console.log();
 
 console.log(pc.bold("Count"));
 console.log(
-  `  ${pc.blue("Male:")}     ${pc.bold(male_count)} ${pc.gray("people")}`,
+  `  ${pc.blue("Male:")}           ${pc.bold(male_count)} ${pc.gray("people")}`,
 );
 console.log(
-  `  ${pc.magenta("Female:")}   ${pc.bold(female_count)} ${pc.gray("people")}`,
+  `  ${pc.magenta("Female:")}         ${pc.bold(female_count)} ${pc.gray("people")}`,
 );
 console.log(
-  `  ${pc.gray("Total:")}    ${pc.bold(total_count)} ${pc.gray("people")}`,
+  `  ${pc.gray("Total:")}          ${pc.bold(total_count)} ${pc.gray("people")}`,
 );
 console.log();
 
 console.log(pc.bold("Mean age"));
 console.log(
-  `  ${pc.blue("Male:")}     ${pc.bold(male_mean)} ${pc.gray("years")}`,
+  `  ${pc.blue("Male:")}           ${pc.bold(male_mean)} ${pc.gray("years")}`,
 );
 console.log(
-  `  ${pc.magenta("Female:")}   ${pc.bold(female_mean)} ${pc.gray("years")}`,
+  `  ${pc.magenta("Female:")}         ${pc.bold(female_mean)} ${pc.gray("years")}`,
 );
 console.log(
-  `  ${pc.yellow("Overall:")}  ${pc.bold(overall_mean)} ${pc.gray("years")}`,
+  `  ${pc.yellow("Overall:")}        ${pc.bold(overall_mean)} ${pc.gray("years")}`,
+);
+console.log();
+
+console.log(pc.bold("Writing preference"));
+console.log(
+  `  ${pc.red("Left-handers:")}   ${pc.bold(left_count)} ${pc.gray("people")}`,
+);
+console.log(
+  `  ${pc.yellow("Either hand:")}    ${pc.bold(either_count)} ${pc.gray("people")}`,
+);
+console.log(
+  `  ${pc.blue("Right-handers:")}  ${pc.bold(right_count)} ${pc.gray("people")}`,
 );
