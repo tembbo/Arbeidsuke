@@ -20,23 +20,39 @@ for (let i = 0; i < set.length; i++) {
   }
 }
 
+const total_count = male_count + female_count;
+
+const male_mean = (male_age_total / male_count).toFixed(1);
+const female_mean = (female_age_total / female_count).toFixed(1);
+const overall_mean = (
+  (male_age_total + female_age_total) /
+  total_count
+).toFixed(1);
+
 console.log();
 console.log(pc.bold(pc.cyan("ergonomics.csv")));
+// console.log(pc.gray("────────────────────────────────"));
 console.log();
 
 console.log(pc.bold("Count"));
-console.log(`  ${pc.blue("Male:")}   ${male_count} people`);
-console.log(`  ${pc.magenta("Female:")} ${female_count} people`);
-console.log(`  ${pc.gray("Total:")}  ${male_count + female_count} people`);
+console.log(
+  `  ${pc.blue("Male:")}     ${pc.bold(male_count)} ${pc.gray("people")}`,
+);
+console.log(
+  `  ${pc.magenta("Female:")}   ${pc.bold(female_count)} ${pc.gray("people")}`,
+);
+console.log(
+  `  ${pc.gray("Total:")}    ${pc.bold(total_count)} ${pc.gray("people")}`,
+);
 console.log();
 
 console.log(pc.bold("Mean age"));
 console.log(
-  `  ${pc.blue("Male:")}    ${(male_age_total / male_count).toFixed(1)} years`,
+  `  ${pc.blue("Male:")}     ${pc.bold(male_mean)} ${pc.gray("years")}`,
 );
 console.log(
-  `  ${pc.magenta("Female:")}  ${(female_age_total / female_count).toFixed(1)} years`,
+  `  ${pc.magenta("Female:")}   ${pc.bold(female_mean)} ${pc.gray("years")}`,
 );
 console.log(
-  `  ${pc.yellow("Overall:")} ${((male_age_total + female_age_total) / (male_count + female_count)).toFixed(1)} years`,
+  `  ${pc.yellow("Overall:")}  ${pc.bold(overall_mean)} ${pc.gray("years")}`,
 );
