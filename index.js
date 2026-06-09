@@ -43,17 +43,23 @@ const overall_mean = (
   total_count
 ).toFixed(1);
 
+const male_percentage = ((male_count / total_count) * 100).toFixed(1);
+const female_percentage = ((female_count / total_count) * 100).toFixed(1);
+
+const left_percentage = ((left_count / total_count) * 100).toFixed(1);
+const either_percentage = ((either_count / total_count) * 100).toFixed(1);
+const right_percentage = ((right_count / total_count) * 100).toFixed(1);
+
 console.log();
 console.log(pc.bold(pc.cyan("ergonomics.csv")));
-// console.log(pc.gray("────────────────────────────────"));
 console.log();
 
 console.log(pc.bold("Count"));
 console.log(
-  `  ${pc.blue("Male:")}           ${pc.bold(male_count)} ${pc.gray("people")}`,
+  `  ${pc.blue("Male:")}           ${pc.bold(male_count)} ${pc.gray("people")} (${male_percentage}%)`,
 );
 console.log(
-  `  ${pc.magenta("Female:")}         ${pc.bold(female_count)} ${pc.gray("people")}`,
+  `  ${pc.magenta("Female:")}         ${pc.bold(female_count)} ${pc.gray("people")} (${female_percentage}%)`,
 );
 console.log(
   `  ${pc.gray("Total:")}          ${pc.bold(total_count)} ${pc.gray("people")}`,
@@ -74,11 +80,11 @@ console.log();
 
 console.log(pc.bold("Writing preference"));
 console.log(
-  `  ${pc.red("Left-handers:")}   ${pc.bold(left_count)} ${pc.gray("people")}`,
+  `  ${pc.red("Left-handers:")}   ${pc.bold(left_count)} ${pc.gray("people")} (${left_percentage}%)`,
 );
 console.log(
-  `  ${pc.yellow("Either hand:")}    ${pc.bold(either_count)} ${pc.gray("people")}`,
+  `  ${pc.yellow("Either hand:")}    ${pc.bold(either_count)} ${pc.gray("people")} (${either_percentage}%)`,
 );
 console.log(
-  `  ${pc.blue("Right-handers:")}  ${pc.bold(right_count)} ${pc.gray("people")}`,
+  `  ${pc.blue("Right-handers:")}  ${pc.bold(right_count)} ${pc.gray("people")} (${right_percentage}%)`,
 );
